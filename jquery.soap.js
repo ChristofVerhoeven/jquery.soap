@@ -1,6 +1,6 @@
 /*==========================
 jquery.soap.js - https://github.com/doedje/jquery.soap
-version: 1.7.2
+version: 1.7.3
 
 jQuery plugin for communicating with a web service using SOAP.
 
@@ -33,7 +33,7 @@ For information about how to use jQuery.soap, authors, changelog, the latest ver
 Visit: https://github.com/doedje/jquery.soap
 
 Documentation about THIS version is found here:
-https://github.com/doedje/jquery.soap/blob/1.7.2/README.md
+https://github.com/doedje/jquery.soap/blob/1.7.3/README.md
 
 ======================*/
 
@@ -467,7 +467,7 @@ https://github.com/doedje/jquery.soap/blob/1.7.2/README.md
 		this.headers = xhr.getAllResponseHeaders().split('\n');
 		this.httpCode = xhr.status;
 		this.httpText = xhr.statusText;
-		this.content = (xhr.responseXML === undefined) ? xhr.responseText : xhr.responseXML;
+		this.content = (xhr.responseXML === undefined || xhr.responseXML === null) ? xhr.responseText : xhr.responseXML;
 		this.toString = function(){
 			if (typeof this.content === 'string') {
 				return this.content;
